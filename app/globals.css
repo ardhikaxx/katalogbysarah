@@ -220,38 +220,54 @@ body {
 
 .searchBar {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
   position: relative;
+  margin: 0 auto;
 }
 
 .searchInput {
   width: 100%;
-  padding: 1.2rem 1.5rem 1.2rem 3.5rem;
-  border-radius: 50px;
-  border: 2px solid var(--color-outline-variant);
+  padding: 1.4rem 1.5rem 1.4rem 4rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-outline-variant);
   background: var(--color-surface-container-lowest);
-  box-shadow: 0 4px 15px var(--color-surface-container-low);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   font-family: var(--font-body-md);
-  font-size: var(--text-body-md);
+  font-size: 1.1rem;
   color: var(--color-on-surface);
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.searchInput::placeholder {
+  color: var(--color-outline);
+  font-weight: 400;
 }
 
 .searchInput:focus {
   border-color: var(--color-primary);
   background: var(--color-surface-container-lowest);
-  box-shadow: 0 4px 20px var(--color-primary-container);
+  box-shadow: 
+    0 15px 35px var(--color-primary-container),
+    0 0 0 4px var(--color-surface-container-high);
+  transform: translateY(-2px);
 }
 
 .searchIcon {
   position: absolute;
-  left: 1.2rem;
+  left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--color-outline);
   width: 24px;
   height: 24px;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.searchInput:focus + .searchIcon {
+  color: var(--color-primary);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .filterPills {
