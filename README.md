@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 Katalog Handmade By Sarah
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=for-the-badge&logo=typescript)
 
-First, run the development server:
+Selamat datang di repositori **Katalog Handmade By Sarah**! Proyek ini adalah sebuah purwarupa aplikasi web katalog produk rajutan (*crochet & amigurumi*) eksklusif yang dirancang dengan antarmuka yang sangat elegan, modern, dan sangat responsif di berbagai perangkat.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Fitur Utama
+
+- 📱 **Mobile-First Design**: Tata letak yang dioptimalkan dengan cermat untuk ukuran layar Smartphone, Tablet, hingga Layar Desktop yang sangat lebar.
+- 🎨 **Premium Aesthetics**: Skema warna bernuansa *Pink pastel* yang lembut (`--color-primary`), dipadukan dengan tipografi ganda (Playfair Display & Plus Jakarta Sans) untuk nuansa mewah dan jelas terbaca.
+- 🪄 **Micro-Animations**: Transisi halus saat *hover* (disorot), efek *glow* (cahaya) pada *header*, serta animasi turun berlahan saat halaman pertama kali dimuat.
+- 🗂️ **Grid Katalog Cerdas**: Daftar produk yang dapat dilipat dan diperluas jumlah kolomnya secara otomatis tanpa memutus tata letak (*Symmetrical Vertical & Horizontal layout*).
+- 🏷️ **Filter & Pencarian Dinamis**: Dilengkapi dengan fitur pencarian interaktif dan *Filter Pills* kategori yang membungkus (wrap) dengan rapi di perangkat *mobile*.
+- 🖼️ **Giant Elongated Detail Card**: Halaman detail produk menggunakan konsep desain "Kartu Raksasa" yang imersif.
+
+## 🚀 Teknologi yang Digunakan
+
+Aplikasi web ini dibangun menggunakan tumpukan teknologi modern untuk memastikan kecepatan, keandalan, dan kemudahan pengembangan masa depan:
+
+- **Framework**: [Next.js 16](https://nextjs.org/) dengan *App Router* terbaru.
+- **Library UI**: [React](https://reactjs.org/).
+- **Bahasa**: [TypeScript](https://www.typescriptlang.org/) untuk pengetikan statis yang kokoh.
+- **Styling**: *Vanilla CSS* (`globals.css`) dengan pemanfaatan ekstensif CSS Variables (Custom Properties) untuk memudahkan pembuatan Tema (Theming).
+
+## 📂 Struktur Proyek Utama
+
+```text
+├── app/
+│   ├── globals.css         # Jantung sistem desain dan utility classes (Micro-animations, Layouts)
+│   ├── layout.tsx          # Wrapper halaman Next.js global
+│   ├── page.tsx            # Halaman Beranda (Katalog Utama)
+│   └── product/
+│       └── [id]/page.tsx   # Halaman Detail Produk Dinamis (Giant Elongated Card)
+├── public/                 # Aset gambar statis
+└── package.json            # Daftar dependensi dan script aplikasi
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Panduan Memulai (Development)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Untuk menjalankan proyek ini secara lokal (di komputer Anda), ikuti langkah-langkah mudah berikut:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone repositori ini:**
+   ```bash
+   git clone https://github.com/ardhikaxx/katalogbysarah.git
+   ```
+2. **Masuk ke direktori proyek:**
+   ```bash
+   cd katalogbysarah
+   ```
+3. **Instal dependensi NPM:**
+   ```bash
+   npm install
+   ```
+4. **Jalankan server pengembangan:**
+   ```bash
+   npm run dev
+   ```
+5. Buka [http://localhost:3000](http://localhost:3000) di *browser* Anda untuk melihat hasil maha karya ini!
 
-## Learn More
+## 🤝 Kontribusi & Dukungan
+Sangat dipersilakan untuk memberikan *Bugs report*, masukan ide desain, maupun Pull Requests!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Dirancang dengan penuh ketelitian untuk menampilkan karya rajutan terbaik.* 🧶💖
