@@ -511,233 +511,323 @@ body {
   animation: fadeIn 0.5s ease;
 }
 
-/* --- BENTO BOX PRODUCT DETAIL PAGE --- */
-.bentoDetailPage {
+/* --- E-COMMERCE DETAIL PAGE --- */
+.ecommerceDetailPage {
   min-height: 100vh;
-  padding: 3rem 2rem;
-  background: var(--color-surface-container-lowest);
-  max-width: 1400px;
+  background: var(--color-background);
+  padding: 2rem 0 6rem;
+}
+
+.ecoContainer {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.bentoNav {
-  margin-bottom: 2rem;
-}
-
-.bentoBackBtn {
-  display: inline-flex;
+.ecoBreadcrumb {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
   font-family: var(--font-label-md);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--color-outline);
+}
+
+.ecoBackLink {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--color-on-background);
   text-decoration: none;
-  background: var(--color-surface);
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-  border: 1px solid var(--color-outline-variant);
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-.bentoBackBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+.ecoBackLink:hover {
+  color: var(--color-primary);
 }
 
-.bentoGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(180px, auto);
-  gap: 1.5rem;
+.ecoBreadcrumbSep {
+  opacity: 0.5;
 }
 
-.bentoBox {
-  background: var(--color-surface);
-  border-radius: 36px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-  border: 1px solid var(--color-outline-variant);
-  position: relative;
+.ecoBreadcrumbCurrent {
+  white-space: nowrap;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  animation: scaleUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
-.bentoBox:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+.ecoProductSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  align-items: flex-start;
+  animation: fadeIn 0.8s ease-out;
 }
 
-/* Specific Grid Placements */
-.bentoImage {
-  grid-column: span 2;
-  grid-row: span 3;
-  padding: 0;
-  border: none;
+.ecoMainImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
 }
 
-.bImg {
+.ecoMainImage {
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 
-.bentoImage:hover .bImg {
+.ecoMainImageWrapper:hover .ecoMainImage {
   transform: scale(1.03);
 }
 
-.bentoCategoryTag {
+.ecoCategoryBadge {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  padding: 0.6rem 1.5rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  padding: 0.5rem 1.2rem;
   border-radius: 50px;
   font-family: var(--font-label-md);
   font-weight: 800;
-  color: var(--color-on-background);
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  z-index: 2;
 }
 
-.bentoHeader {
-  grid-column: span 1;
-  grid-row: span 1;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-surface), var(--color-surface-container-high));
+.ecoProductInfo {
+  display: flex;
+  flex-direction: column;
 }
 
-.bentoTitle {
+.ecoProductTitle {
   font-family: var(--font-headline-xl);
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 1rem 0;
   color: var(--color-on-background);
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
 }
 
-.bentoPrice {
+.ecoProductPrice {
   font-family: var(--font-headline-md);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0;
+  margin: 0 0 2rem 0;
 }
 
-.bentoAction {
-  grid-column: span 1;
-  grid-row: span 1;
-  justify-content: center;
-  text-align: center;
-  background: var(--color-on-background);
-  color: #fff;
-}
-
-.bentoActionInner h3 {
-  font-family: var(--font-headline-md);
-  margin: 0 0 0.5rem 0;
-  font-size: 1.4rem;
-}
-
-.bentoActionInner p {
-  font-family: var(--font-body-sm);
-  opacity: 0.8;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.5;
-}
-
-.bentoBuyBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.ecoDivider {
+  height: 1px;
   width: 100%;
-  padding: 1rem;
-  background: var(--color-primary);
-  color: #fff;
-  text-decoration: none;
-  font-family: var(--font-label-md);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 100px;
-  transition: all 0.3s ease;
+  background: var(--color-outline-variant);
+  margin: 0 0 2rem 0;
 }
 
-.bentoBuyBtn:hover {
-  background: #fff;
-  color: var(--color-primary);
-  transform: scale(1.02);
-}
-
-.bentoDesc {
-  grid-column: span 1;
-  grid-row: span 1;
-  overflow-y: auto;
-}
-
-.bentoDesc h3 {
+.ecoDescTitle {
   font-family: var(--font-headline-md);
-  margin: 0 0 1.5rem 0;
-  font-size: 1.3rem;
-  color: var(--color-outline);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-on-background);
+  margin: 0 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--color-outline-variant);
-  padding-bottom: 0.5rem;
 }
 
-.bentoDescList {
+.ecoDescContent {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  margin-bottom: 3rem;
 }
 
-.bentoDescList p {
+.ecoDescContent p {
   font-family: var(--font-body-md);
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.7;
   color: var(--color-on-surface-variant);
+  margin: 0;
+  font-size: 1.05rem;
 }
 
-.bentoListItem {
+.ecoListItem {
   position: relative;
   padding-left: 1.5rem;
-  font-weight: 500;
   color: var(--color-on-background) !important;
+  font-weight: 500;
 }
 
-.bentoListItem::before {
+.ecoListItem::before {
   content: '✦';
   position: absolute;
   left: 0;
   color: var(--color-primary);
 }
 
-@keyframes scaleUpFade {
-  from { opacity: 0; transform: scale(0.95) translateY(20px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+.ecoActionBox {
+  background: var(--color-surface-container-lowest);
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid var(--color-primary-container);
+  box-shadow: 0 15px 35px rgba(226, 138, 158, 0.1);
+}
+
+.ecoDeliveryInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-on-background);
+  font-family: var(--font-label-md);
+  font-weight: 600;
+}
+
+.ecoBuyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: var(--font-label-md);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px var(--color-primary-container);
+}
+
+.ecoBuyBtn:hover {
+  transform: translateY(-4px);
+  background: var(--color-primary-fixed-dim);
+  box-shadow: 0 15px 35px var(--color-primary-container);
+}
+
+/* Related Products */
+.ecoRelatedSection {
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-outline-variant);
+  padding-top: 4rem;
+}
+
+.ecoRelatedTitle {
+  font-family: var(--font-headline-md);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-on-background);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.ecoRelatedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.ecoRelatedCard {
+  background: var(--color-surface-container-lowest);
+  border-radius: 20px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.ecoRelatedCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+  border-color: var(--color-primary-container);
+}
+
+.ecoRelatedImageWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.ecoRelatedImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ecoRelatedCard:hover .ecoRelatedImage {
+  transform: scale(1.05);
+}
+
+.ecoRelatedInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ecoRelatedCategory {
+  font-family: var(--font-label-md);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-outline);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.ecoRelatedName {
+  font-family: var(--font-headline-md);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-on-background);
+  margin: 0 0 0.8rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.ecoRelatedPrice {
+  font-family: var(--font-body-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: auto 0 0 0;
 }
 
 @media (max-width: 1024px) {
-  .bentoDetailPage {
-    padding: 1.5rem;
+  .ecoProductSection {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  .bentoGrid {
+  .ecoProductTitle {
+    font-size: 2.2rem;
+  }
+  .ecoRelatedGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .bentoImage {
-    grid-column: span 2;
-    grid-row: span 2;
-    aspect-ratio: 1;
-  }
-  .bentoHeader, .bentoAction, .bentoDesc {
-    grid-column: span 2;
+}
+
+@media (max-width: 600px) {
+  .ecoRelatedGrid {
+    grid-template-columns: 1fr;
   }
 }
 

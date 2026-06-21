@@ -11,63 +11,97 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
     notFound();
   }
 
+  // Get up to 4 other products for "Related Products"
+  const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 4);
+
   return (
-    <div className="bentoDetailPage">
-      <div className="bentoNav">
-        <Link href="/" className="bentoBackBtn" aria-label="Kembali ke Katalog">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          Katalog
-        </Link>
-      </div>
+    <div className="ecommerceDetailPage">
+      <div className="ecoContainer">
+        <nav className="ecoBreadcrumb">
+          <Link href="/" className="ecoBackLink">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Katalog
+          </Link>
+          <span className="ecoBreadcrumbSep">/</span>
+          <span className="ecoBreadcrumbCurrent">{product.name}</span>
+        </nav>
 
-      <div className="bentoGrid">
-        {/* Box 1: Image Showcase (Large) */}
-        <div className="bentoBox bentoImage" style={{ animationDelay: '0.1s' }}>
-          <Image 
-            src={product.image} 
-            fill 
-            className="bImg" 
-            alt={product.name}
-            priority
-          />
-          <div className="bentoCategoryTag">{product.category}</div>
+        {/* Product Section */}
+        <div className="ecoProductSection">
+          <div className="ecoImageGallery">
+            <div className="ecoMainImageWrapper">
+              <Image 
+                src={product.image} 
+                alt={product.name}
+                fill
+                className="ecoMainImage"
+                priority
+              />
+              <div className="ecoCategoryBadge">{product.category}</div>
+            </div>
+          </div>
+          
+          <div className="ecoProductInfo">
+            <h1 className="ecoProductTitle">{product.name}</h1>
+            <p className="ecoProductPrice">{product.price}</p>
+            
+            <div className="ecoDivider"></div>
+            
+            <div className="ecoDescription">
+              <h3 className="ecoDescTitle">Deskripsi Produk</h3>
+              <div className="ecoDescContent">
+                {product.desc.split('\n').map((line, i) => (
+                  <p key={i} className={line.trim().startsWith('~') ? 'ecoListItem' : ''}>
+                     {line.replace('~', '').trim()}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="ecoActionBox">
+              <div className="ecoDeliveryInfo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>Produk Pre-Order (Pengerjaan 3-7 hari)</span>
+              </div>
+              <a 
+                href={getWhatsAppLink(product)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="ecoBuyBtn"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Pesan Sekarang via WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Box 2: Title & Price */}
-        <div className="bentoBox bentoHeader" style={{ animationDelay: '0.2s' }}>
-          <h1 className="bentoTitle">{product.name}</h1>
-          <p className="bentoPrice">{product.price}</p>
-        </div>
-
-        {/* Box 3: Description / Details */}
-        <div className="bentoBox bentoDesc" style={{ animationDelay: '0.3s' }}>
-          <h3>Keterangan Produk</h3>
-          <div className="bentoDescList">
-            {product.desc.split('\n').map((line, i) => (
-              <p key={i} className={line.trim().startsWith('~') ? 'bentoListItem' : 'bentoListText'}>
-                 {line.replace('~', '').trim()}
-              </p>
+        {/* Related Products Section */}
+        <div className="ecoRelatedSection">
+          <h2 className="ecoRelatedTitle">Mungkin Anda Juga Suka</h2>
+          <div className="ecoRelatedGrid">
+            {relatedProducts.map(related => (
+              <Link href={`/product/${related.id}`} key={related.id} className="ecoRelatedCard">
+                <div className="ecoRelatedImageWrapper">
+                  <Image 
+                    src={related.image} 
+                    alt={related.name}
+                    fill
+                    className="ecoRelatedImage"
+                  />
+                </div>
+                <div className="ecoRelatedInfo">
+                  <span className="ecoRelatedCategory">{related.category}</span>
+                  <h4 className="ecoRelatedName">{related.name}</h4>
+                  <p className="ecoRelatedPrice">{related.price}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
 
-        {/* Box 4: Buy Action */}
-        <div className="bentoBox bentoAction" style={{ animationDelay: '0.4s' }}>
-          <div className="bentoActionInner">
-            <h3>Tertarik memesan?</h3>
-            <p>Silakan hubungi kami untuk menyesuaikan warna atau tambahan nama.</p>
-            <a 
-              href={getWhatsAppLink(product)} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bentoBuyBtn"
-            >
-              Pesan via WhatsApp
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );
