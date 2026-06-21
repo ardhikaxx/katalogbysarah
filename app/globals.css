@@ -712,17 +712,62 @@ body {
   }
   .header { padding: 3rem 1rem; }
   .grid { 
-    grid-template-columns: 1fr; 
-    gap: 1rem; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px; 
+    padding: 12px;
   }
   .container { padding: var(--spacing-margin-mobile); }
   
   .card {
-    padding: 10px;
+    flex-direction: column;
+    padding: 12px;
     gap: 12px;
+    border-radius: 16px;
   }
   .cardImageWrapper {
-    width: 120px;
-    min-width: 120px;
+    width: 100%;
+    min-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+  .cardHeader {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cardTitle {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+  .cardCategoryBadge {
+    align-self: flex-start;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .cardDesc {
+    display: none; /* Disembunyikan agar kartu rapi di mobile */
+  }
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cardPrice {
+    font-size: 1rem;
+  }
+  .cardActionButtons {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .buyBtnPill {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  .detailBtnCircle {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
 }
