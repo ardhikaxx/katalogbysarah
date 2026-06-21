@@ -81,23 +81,51 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
         {/* Related Products Section */}
         <div className="ecoRelatedSection">
           <h2 className="ecoRelatedTitle">Mungkin Anda Juga Suka</h2>
-          <div className="ecoRelatedGrid">
+          <div className="grid">
             {relatedProducts.map(related => (
-              <Link href={`/product/${related.id}`} key={related.id} className="ecoRelatedCard">
-                <div className="ecoRelatedImageWrapper">
+              <div key={related.id} className="card">
+                <div className="cardImageWrapper">
                   <Image 
                     src={related.image} 
                     alt={related.name}
                     fill
-                    className="ecoRelatedImage"
+                    className="cardImage"
                   />
                 </div>
-                <div className="ecoRelatedInfo">
-                  <span className="ecoRelatedCategory">{related.category}</span>
-                  <h4 className="ecoRelatedName">{related.name}</h4>
-                  <p className="ecoRelatedPrice">{related.price}</p>
+                
+                <div className="cardContent">
+                  <div className="cardHeader">
+                    <h2 className="cardTitle">{related.name}</h2>
+                    <span className="cardCategoryBadge">{related.category}</span>
+                  </div>
+                  
+                  <p className="cardDesc">{related.desc}</p>
+                  
+                  <div className="cardFooter">
+                    <span className="cardPrice">{related.price}</span>
+                    <div className="cardActionButtons">
+                      <Link href={`/product/${related.id}`} className="detailBtnCircle" aria-label="Lihat Detail">
+                        <svg className="arrowIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M7 17L17 7"/>
+                          <path d="M7 7h10v10"/>
+                        </svg>
+                      </Link>
+                      <a 
+                        href={getWhatsAppLink(related)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="buyBtnPill"
+                      >
+                        <svg className="basketIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3 10h18l-2 11H5L3 10Z"/>
+                          <path d="M8 10V5a4 4 0 0 1 8 0v5"/>
+                        </svg>
+                        Beli
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
