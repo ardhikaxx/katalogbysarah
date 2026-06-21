@@ -28,21 +28,21 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
           Kembali ke Katalog
         </Link>
 
-        {/* Massive Elongated Card based on image.png style */}
-        <div className="card detailCardMain">
-          <div className="cardImageWrapper detailCardImage">
+        {/* Elongated Card matching catalog style */}
+        <div className="detailCardMain">
+          <div className="detailCardImageWrapper">
             <Image 
               src={product.image} 
               alt={product.name}
               fill
-              className="cardImage"
+              className="detailCardImage"
               priority
             />
           </div>
           
-          <div className="cardContent detailCardContent">
-            <div className="cardHeader">
-              <h1 className="cardTitle detailCardTitle">{product.name}</h1>
+          <div className="detailCardContent">
+            <div className="detailCardHeader">
+              <h1 className="detailCardTitle">{product.name}</h1>
               <span className="cardCategoryBadge detailCardBadge">{product.category}</span>
             </div>
             
@@ -54,8 +54,8 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
               ))}
             </div>
             
-            <div className="cardFooter detailCardFooter">
-              <span className="cardPrice detailCardPrice">{product.price}</span>
+            <div className="detailCardFooter">
+              <span className="detailCardPrice">{product.price}</span>
               <div className="cardActionButtons">
                 <a 
                   href={getWhatsAppLink(product)}
