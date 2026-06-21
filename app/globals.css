@@ -555,8 +555,10 @@ body {
 }
 
 .detailCardImage {
-  border-radius: 0;
+  border-radius: 32px 0 0 32px;
   height: 100%;
+  width: 100%;
+  min-width: auto;
   aspect-ratio: auto;
 }
 
@@ -570,6 +572,8 @@ body {
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  display: block;
+  overflow: visible;
 }
 
 .detailCardBadge {
@@ -645,6 +649,7 @@ body {
   }
   .detailCardImage {
     aspect-ratio: 1/1;
+    border-radius: 32px 32px 0 0;
   }
   .detailCardContent {
     padding: 2rem;
