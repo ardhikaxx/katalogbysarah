@@ -524,24 +524,27 @@ body {
 .backLinkDetail {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--color-on-background);
+  gap: 0.6rem;
+  color: var(--color-primary);
   text-decoration: none;
   font-family: var(--font-label-md);
-  font-weight: 700;
-  background: var(--color-surface);
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-  border: 1px solid var(--color-outline-variant);
+  font-weight: 800;
+  background: var(--color-surface-container-lowest);
+  padding: 0.7rem 1.6rem;
+  border-radius: 100px;
+  box-shadow: 0 5px 20px rgba(226, 138, 158, 0.15);
+  border: 1px solid var(--color-primary-container);
   margin-bottom: 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  letter-spacing: 0.02em;
 }
 
 .backLinkDetail:hover {
-  transform: translateY(-2px);
-  color: var(--color-primary);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateX(-5px);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  box-shadow: 0 8px 25px rgba(226, 138, 158, 0.25);
+  border-color: var(--color-primary-fixed-dim);
 }
 
 .detailCardMain {
