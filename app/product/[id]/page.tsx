@@ -126,7 +126,6 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
           ))}
         </div>
       </div>
-      </div>
     </div>
   );
 }
