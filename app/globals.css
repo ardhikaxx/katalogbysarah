@@ -444,29 +444,23 @@ body {
   color: var(--color-primary);
 }
 
-.buyBtnCircle {
+.buyBtnPill {
   background: var(--color-primary);
   color: #ffffff;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-family: var(--font-label-md);
+  font-size: 0.85rem;
+  font-weight: 700;
   text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.buyBtnCircle:hover {
+.buyBtnPill:hover {
   background: var(--color-primary-fixed-dim);
-  transform: scale(1.1);
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--color-primary-container);
-}
-
-.whatsappIcon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
 }
 
 .emptyState {
