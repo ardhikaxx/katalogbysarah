@@ -130,8 +130,8 @@ body {
 
 .header {
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding: 6rem 1rem 1rem;
+  margin-bottom: 0;
+  padding: 6rem 1rem 0;
   position: relative;
   animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -202,7 +202,8 @@ body {
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   line-height: 1.4;
   color: var(--color-outline);
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0;
   font-style: italic;
   font-weight: 400;
 }
@@ -212,6 +213,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   animation: fadeIn 1s ease-out;
 }
