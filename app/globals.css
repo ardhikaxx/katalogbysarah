@@ -394,9 +394,9 @@ body {
 }
 
 .cardTitle {
-  font-family: var(--font-headline-md);
+  font-family: var(--font-body-md);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-on-background);
   margin: 0;
   display: -webkit-box;
@@ -597,7 +597,7 @@ body {
 }
 
 .detailCardTitle {
-  font-family: var(--font-headline-md);
+  font-family: var(--font-body-md);
   font-size: 1.6rem;
   font-weight: 800;
   line-height: 1.2;
