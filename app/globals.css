@@ -776,24 +776,13 @@ body {
     height: 20px;
   }
   .filterPills {
-    width: 100%;
-    max-width: 100vw;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.6rem;
-    padding: 0.5rem 1rem 1rem 1rem;
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .filterPills::-webkit-scrollbar {
-    display: none;
   }
   .pill {
     padding: 0.5rem 1.2rem;
     font-size: 0.8rem;
-    flex-shrink: 0;
     white-space: nowrap;
   }
   .grid { 
