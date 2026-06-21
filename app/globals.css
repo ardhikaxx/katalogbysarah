@@ -513,7 +513,7 @@ body {
 
 /* --- ELONGATED CARD DETAIL PAGE --- */
 .detailCardWrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: -4rem auto 0;
   position: relative;
   z-index: 10;
@@ -556,8 +556,8 @@ body {
 }
 
 .detailCardImageWrapper {
-  width: 320px;
-  min-width: 320px;
+  width: 420px;
+  min-width: 420px;
   aspect-ratio: 1 / 1;
   border-radius: 20px;
   position: relative;
