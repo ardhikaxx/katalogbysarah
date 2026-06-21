@@ -12,60 +12,60 @@ export default async function ProductDetail(props: { params: Promise<{ id: strin
   }
 
   return (
-    <div className="editorialDetailLayout">
-      <div className="editorialImageCol">
-        <Link href="/" className="editorialBackBtn" aria-label="Kembali ke Katalog">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <div className="bentoDetailPage">
+      <div className="bentoNav">
+        <Link href="/" className="bentoBackBtn" aria-label="Kembali ke Katalog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
+          Katalog
         </Link>
-        <Image 
-          src={product.image} 
-          alt={product.name}
-          fill
-          className="editorialImage"
-          priority
-        />
       </div>
-      
-      <div className="editorialInfoCol">
-        <div className="editorialInfoContent">
-          <span className="editorialBadge">{product.category}</span>
-          <h1 className="editorialTitle">{product.name}</h1>
-          <p className="editorialPrice">{product.price}</p>
-          
-          <div className="editorialDivider"></div>
-          
-          <div className="editorialDescSection">
-            <h3 className="editorialDescTitle">Keterangan Produk</h3>
-            <div className="editorialDescBody">
-              {product.desc.split('\n').map((line, i) => {
-                if (line.trim().startsWith('~')) {
-                  return (
-                    <div key={i} className="editorialListItem">
-                      <div className="editorialDot"></div>
-                      <p>{line.replace('~', '').trim()}</p>
-                    </div>
-                  );
-                }
-                return <p key={i} className="editorialText">{line}</p>;
-              })}
-            </div>
+
+      <div className="bentoGrid">
+        {/* Box 1: Image Showcase (Large) */}
+        <div className="bentoBox bentoImage" style={{ animationDelay: '0.1s' }}>
+          <Image 
+            src={product.image} 
+            fill 
+            className="bImg" 
+            alt={product.name}
+            priority
+          />
+          <div className="bentoCategoryTag">{product.category}</div>
+        </div>
+
+        {/* Box 2: Title & Price */}
+        <div className="bentoBox bentoHeader" style={{ animationDelay: '0.2s' }}>
+          <h1 className="bentoTitle">{product.name}</h1>
+          <p className="bentoPrice">{product.price}</p>
+        </div>
+
+        {/* Box 3: Description / Details */}
+        <div className="bentoBox bentoDesc" style={{ animationDelay: '0.3s' }}>
+          <h3>Keterangan Produk</h3>
+          <div className="bentoDescList">
+            {product.desc.split('\n').map((line, i) => (
+              <p key={i} className={line.trim().startsWith('~') ? 'bentoListItem' : 'bentoListText'}>
+                 {line.replace('~', '').trim()}
+              </p>
+            ))}
           </div>
-          
-          <div className="editorialActionSection">
+        </div>
+
+        {/* Box 4: Buy Action */}
+        <div className="bentoBox bentoAction" style={{ animationDelay: '0.4s' }}>
+          <div className="bentoActionInner">
+            <h3>Tertarik memesan?</h3>
+            <p>Silakan hubungi kami untuk menyesuaikan warna atau tambahan nama.</p>
             <a 
-              href={getWhatsAppLink(product)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="editorialBuyBtn"
+              href={getWhatsAppLink(product)} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bentoBuyBtn"
             >
-              <span>Hubungi via WhatsApp</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              Pesan via WhatsApp
             </a>
-            <p className="editorialNote">Pesanan dibuat secara khusus (made-to-order). Waktu pengerjaan bergantung pada antrean.</p>
           </div>
         </div>
       </div>
