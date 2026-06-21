@@ -688,6 +688,38 @@ body {
   .detailCardTitle {
     font-size: 1.8rem;
   }
+  
+  /* Tablet Catalog Card - Vertical Symmetrical Layout */
+  .card {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 20px;
+  }
+  .cardImageWrapper {
+    width: 100%;
+    min-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cardActionButtons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .buyBtnPill {
+    flex-grow: 1;
+    justify-content: center;
+  }
 }
 
 @keyframes fadeInDown {
