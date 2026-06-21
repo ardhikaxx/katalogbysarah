@@ -318,23 +318,23 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2.5rem;
-  max-width: var(--spacing-container-max);
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3.5rem 2rem; /* Big gap to allow floating buttons */
+  padding: 1rem;
 }
 
 .card {
   position: relative;
-  background: var(--color-surface);
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  background: var(--color-surface-container-lowest);
+  border-radius: 120px 120px 24px 24px;
+  overflow: visible;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   animation: fadeInUp 0.8s ease-out backwards;
+  border: 1px solid var(--color-outline-variant);
 }
 
 .card:nth-child(1) { animation-delay: 0.1s; }
@@ -344,18 +344,18 @@ body {
 .card:nth-child(5) { animation-delay: 0.5s; }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(226, 138, 158, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(226, 138, 158, 0.15);
+  border-color: rgba(226, 138, 158, 0.4);
 }
 
 .cardImageWrapper {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   position: relative;
-  border-radius: 24px;
+  border-radius: 110px 110px 16px 16px;
   overflow: hidden;
-  background: var(--color-surface-container-lowest);
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-bottom: 1.5rem;
 }
 
 .cardImage {
@@ -366,42 +366,40 @@ body {
 }
 
 .card:hover .cardImage {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .cardCategoryBadge {
   position: absolute;
   top: 1rem;
-  left: 1rem;
-  background: var(--color-surface);
-  color: var(--color-on-surface);
-  padding: 0.4rem 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-on-background);
+  padding: 0.5rem 1.2rem;
   border-radius: 50px;
   font-family: var(--font-label-md);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   z-index: 2;
 }
 
 .cardInfo {
-  padding: 1.5rem 0.5rem 0.5rem;
+  padding: 0 1rem 1rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.card:hover .cardInfo {
-  transform: translateY(-10px);
+  flex-grow: 1;
 }
 
 .cardTitle {
   font-family: var(--font-headline-md);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-on-background);
   margin: 0 0 0.5rem 0;
@@ -412,60 +410,52 @@ body {
   overflow: hidden;
 }
 
+.cardDesc {
+  display: none;
+}
+
 .cardPrice {
   font-family: var(--font-body-md);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-outline);
-  margin: 0;
-}
-
-.cardHoverReveal {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.card:hover .cardHoverReveal {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0 0 1rem 0;
 }
 
 .buyBtnFull {
-  width: 100%;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   background: var(--color-primary);
   color: #ffffff;
-  padding: 1rem;
-  border-radius: 20px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
   text-decoration: none;
   font-family: var(--font-label-md);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  box-shadow: 0 8px 25px var(--color-primary-container);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px var(--color-primary-container);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 3;
+  white-space: nowrap;
 }
 
 .buyBtnFull:hover {
   background: var(--color-primary-fixed-dim);
-  transform: scale(1.02);
+  transform: translateX(-50%) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .whatsappIcon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
