@@ -444,6 +444,37 @@ body {
   color: var(--color-primary);
 }
 
+.cardActionButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detailBtnCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.detailBtnCircle:hover {
+  background: var(--color-surface-variant);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
 .buyBtnPill {
   background: var(--color-primary);
   color: #ffffff;

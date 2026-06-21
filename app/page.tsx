@@ -128,18 +128,26 @@ export default function Catalog() {
               
               <div className="cardFooter">
                 <span className="cardPrice">{product.price}</span>
-                <a 
-                  href={getWhatsAppLink(product)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="buyBtnPill"
-                >
-                  <svg className="basketIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 10h18l-2 11H5L3 10Z"/>
-                    <path d="M8 10V5a4 4 0 0 1 8 0v5"/>
-                  </svg>
-                  Beli
-                </a>
+                <div className="cardActionButtons">
+                  <a href={`#detail-${product.id}`} className="detailBtnCircle" aria-label="Lihat Detail">
+                    <svg className="arrowIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M7 17L17 7"/>
+                      <path d="M7 7h10v10"/>
+                    </svg>
+                  </a>
+                  <a 
+                    href={getWhatsAppLink(product)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="buyBtnPill"
+                  >
+                    <svg className="basketIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 10h18l-2 11H5L3 10Z"/>
+                      <path d="M8 10V5a4 4 0 0 1 8 0v5"/>
+                    </svg>
+                    Beli
+                  </a>
+                </div>
               </div>
             </div>
           </div>
