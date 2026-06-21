@@ -325,12 +325,7 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
-}
+
 
 .card {
   background: var(--color-surface-container-lowest);
@@ -695,16 +690,6 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
-  .ecoProductSection {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .ecoProductTitle {
-    font-size: 2.2rem;
-  }
-}
-
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -726,6 +711,18 @@ body {
     line-height: var(--text-headline-lg-mobile--line-height);
   }
   .header { padding: 3rem 1rem; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .grid { 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+  }
   .container { padding: var(--spacing-margin-mobile); }
+  
+  .card {
+    padding: 10px;
+    gap: 12px;
+  }
+  .cardImageWrapper {
+    width: 120px;
+    min-width: 120px;
+  }
 }
